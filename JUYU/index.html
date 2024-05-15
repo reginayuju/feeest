@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>運動表現紀錄</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            padding: 30px;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .header h2 {
+            font-size: 1.5rem;
+            color: #777;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h3 {
+            font-size: 1.25rem;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section ul li {
+            margin-bottom: 10px;
+        }
+        .contact-info {
+            text-align: center;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .countdown {
+            text-align: center;
+            font-size: 2rem;
+            color: #d9534f;
+        }
+        .table-container {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 上半部：個人基本資料 -->
+        <div class="header">
+            <img src="images/taiyuju.jpg" alt="你的照片" class="profile-pic">
+            <h1>戴佑洳</h1>
+            <h2>不務正業的寵物美容師</h2>
+            <p>這是一段關於你的自我介紹，介紹你的背景、興趣和專長。</p>
+        </div>
+        <hr>
+        <!-- 中部：下一場比賽資訊及倒數計時器 -->
+        <div class="section">
+            <h3>下一場比賽資訊</h3>
+            <p>比賽名稱：雙塔520</p>
+            <p>比賽日期：<span id="race-date">2024-11-09T06:00:00</span></p>
+            <div class="countdown">
+                <p>距離比賽還有：</p>
+                <p id="countdown-timer"></p>
+            </div>
+        </div>
+        <hr>
+        <!-- 下半部：歷史比賽成績表格 -->
+        <div class="section table-container">
+            <h3>歷史比賽成績</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>比賽名稱</th>
+                        <th>日期</th>
+                        <th>跑步時間</th>
+                        <th>游泳時間</th>
+                        <th>單車時間</th>
+                        <th>總時間</th>
+                        <th>名次</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024 Challenge Taiwan in Taitung</td>
+                        <td>2024-04-28</td>
+                        <td>1:04:39</td>
+                        <td>0:38:11</td>
+                        <td>1:31:09</td>
+                        <td>7:26:35</td>
+                        <td>10</td>
+                    </tr>
+                    <!-- 在這裡添加更多比賽紀錄 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const raceDate = new Date(document.getElementById('race-date').textContent);
+            const now = new Date();
+            const timeDifference = raceDate - now;
+            if (timeDifference > 0) {
+                const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+                document.getElementById('countdown-timer').textContent = `${days}天 ${hours}小時 ${minutes}分鐘 ${seconds}秒`;
+            } else {
+                document.getElementById('countdown-timer').textContent = "比賽已經開始或結束！";
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();  // 初始調用一次，防止刷新頁面後的空白狀態
+    </script>
+</body>
+</html>
