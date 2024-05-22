@@ -43,20 +43,18 @@ for _p in prime_number_list:
 print(ans_list)
 
 ans_count = {}
-
 count = 1
-for j in range(len(ans_list)):
-    if ((j + 1) < (len(ans_list))):
-        if (ans_list[j] == ans_list[j + 1]):
-            count = count + 1
-            ans_count[ans_list[j]] = count
-        else:
-            count = 1
-            ans_count[ans_list[j]] = count
+for i in range(0, len(ans_list)):
 
-    elif (j + 1) == len(ans_list):
-        ans_count[ans_list[j]] = count
+    if (i == len(ans_list) - 1):
+        ans_count[ans_list[i]] = count
         break
+
+    if (ans_list[i] == ans_list[i + 1]):
+        count += 1
+    else:
+        ans_count[ans_list[i]] = count
+        count = 1
 
 print(ans_count)
 
@@ -66,10 +64,10 @@ for key, value in ans_count.items():
     if (value > 1):
         temp_str = str(key) + "^" + str(value)
     else:
-        temp_str = "*" + str(key)
+        temp_str = str(key)
 
-    ans_str = ans_str + temp_str
+    ans_str = ans_str + temp_str + " * "
 
-ans_str = str(orgin_number) + "=" + ans_str
+ans_str = ans_str[:-3]
 
 print(ans_str)
