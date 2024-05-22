@@ -84,7 +84,6 @@
         }
     </style>
 </head>
-
 <body>
     <div class="container">
         <!-- 上半部：個人基本資料 -->
@@ -154,34 +153,3 @@
             </table>
         </div>
     </div>
-    <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="11280051887" data-style="standard">
-    </div>
-    <script src="https://strava-embeds.com/embed.js"></script>
-
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14484.80482740578!2d121.02204164999999!3d24.82279185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468370f9719828d%3A0xd05d42e4cea4211f!2z6YGg5p2x55m-6LKoIOerueWMl-W6lw!5e0!3m2!1szh-TW!2stw!4v1716176458637!5m2!1szh-TW!2stw"
-        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-    <script>
-        function updateCountdown() {
-            const raceDate = new Date('2024-11-02').toISOString();
-            const now = new Date();
-            const timeDifference = raceDate - now;
-            if (timeDifference > 0) {
-                const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-                document.getElementById('countdown-timer').textContent = `${days}天 ${hours}小時 ${minutes}分鐘 ${seconds}秒`;
-            } else {
-                document.getElementById('countdown-timer').textContent = "比賽已經開始或結束！";
-            }
-        }
-
-        setInterval(updateCountdown, 1000);
-        updateCountdown();  // 初始調用一次，防止刷新頁面後的空白狀態
-    </script>
-</body>
-
-</html>
