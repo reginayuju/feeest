@@ -20,7 +20,7 @@
 ╮(￣▽￣)╭
 '''
 
-number = input("請輸入一個數字:")
+number = input("")
 orgin_number = int(number)
 number = int(number)
 prime_number_list = []
@@ -40,7 +40,7 @@ for _p in prime_number_list:
             number = int(number / _p)
         else:
             break
-print(ans_list)
+# print(ans_list)
 
 same_list = []
 
@@ -53,7 +53,9 @@ for j in range(len(ans_list)):
             same_list.append(ans_list[-1])
     else:
         break
-print(same_list)
+
+## Bug
+# print(same_list)
 
 ans_count = {}
 for i in range(len(same_list)):
@@ -64,7 +66,7 @@ for i in range(len(same_list)):
             count = count + 1
 
     ans_count[target] = count
-print(ans_count)
+# print(ans_count)
 
 ans_str = ""
 for key, value in ans_count.items():
