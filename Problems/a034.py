@@ -32,3 +32,8 @@ from sys import stdin
 for read in stdin:
     n=int(read)
     print(bin(n)[2:]) 
+
+# data=input()
+# for read in data:
+#     n=int(data)
+#     print(bin(n)[2:])
