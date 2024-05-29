@@ -19,3 +19,10 @@
 # 範例輸出 #1
 # 11
 # 110
+
+X=int(input())
+Y=X/2
+Z=X%2
+while(Z==0):
+    print(0)
+Y=Y/2

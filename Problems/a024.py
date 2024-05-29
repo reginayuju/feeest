@@ -30,17 +30,26 @@ for a_num in range(2, (a + 1)):
             isDivided = True
     if (isDivided == False):
         a_list.append(a_num)
-print("AAAAA", a_list)
+# print("AAAAA", a_list)
 
 for ia in a_list:
     while (True):
         if (a % ia == 0):
             ans_list.append(ia)
             a = int(a / ia)
-            print("EEEE",a)
+            # print("EEEE",a)
         else:
             break
-        print(ans_list)
+        # print(ans_list)
+for d in range (len(ans_list)):
+    # print(d)
+    # print(int(len(ans_list)))
+    result=1
+    # if (d + 1) < len(ans_list):
+    result=result*ans_list[d]
+    print(result)
+    # else:
+    #     break
 # for ia in a_list:
 #     if (a % ia == 0):
 #         factor_a_list.append(ia)
@@ -50,7 +59,7 @@ for ia in a_list:
 #         break
 
 #     print(factor_a_list)
-    
+
 # print("BBBBB", factor_a_list)
 # for b_num in range(2, (b + 1)):
 #     isDivided = False
