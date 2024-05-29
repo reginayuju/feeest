@@ -20,9 +20,15 @@
 # 11
 # 110
 
-X=int(input())
-Y=X/2
-Z=X%2
-while(Z==0):
-    print(0)
-Y=Y/2
+# X=int(input())
+# Y=X/2
+# Z=X%2
+# while(Z==0):
+#     print(0)
+# Y=Y/2
+
+from sys import stdin
+
+for read in stdin:
+    n=int(read)
+    print(bin(n)[2:]) 
