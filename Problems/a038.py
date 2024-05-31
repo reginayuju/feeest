@@ -8,8 +8,8 @@ print(int(b))
 # n[-1::]
 
 # 方法2
-n = input()
-for i in range(-1, -1 * (len(n) + 1), -1):
-    if n[i] != "0":
-        break
-print(n[i::-1])
+# n = input()
+# for i in range(-1, -1 * (len(n) + 1), -1):
+#     if n[i] != "0":
+#         break
+# print(n[i::-1])
