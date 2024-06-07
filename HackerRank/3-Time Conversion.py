@@ -52,15 +52,26 @@ import sys
 
 def timeConversion(s):
     if "PM" in s:
-        print(s+12)
+        if s[0:2]=='12':
+            ans=s[0:8]
+        else:
+         p=str(12+int(s[0:2]))
+         ans=p+s[2:8]
+    if "AM"in s:
+        if s[0:2]=='12':
+            a='00'
+            ans=a+s[2:8]
+        else:
+            ans=s[0:8]
+    print(ans)
 
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    # fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
     s = input()
 
     result = timeConversion(s)
 
-    fptr.write(result + '\n')
+    # fptr.write(result + '\n')
 
-    fptr.close()
+    # fptr.close()
