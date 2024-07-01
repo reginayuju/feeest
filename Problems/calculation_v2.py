@@ -61,7 +61,18 @@ def calculate_expression(expression):
 
 
 # 範例使用
-expression = "((1+5)/(2+1))*(5+5)"
+# expression = "((1+5)/(2+1))*(5+5)"
 expression = "((1.999+4.001)/(2+1))*(5+5)"
 result = calculate_expression(expression)
 print(f"Result: {result}")
+
+
+# 1+5+6+7
+
+# stack  [1, +, 5, +, 6, +, 7]
+
+# stack  [1, +, 5, +, 13]
+
+# stack  [1, +, 18]
+
+# stack  [19]
