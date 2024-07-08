@@ -13,7 +13,7 @@ import sys
 
 # def pangrams(s):
 
-string = "The quick brown Fox jumps over the lazy dog"
+string = "The quick brown ox jumps over the lazy dog"
 lowerstring=string.lower()
 # pattern = '[a-zA-Z]'  # 匹配大小写字母
 # result = re.findall(pattern, s)
@@ -23,13 +23,17 @@ lowerstring=string.lower()
 #     print ('False')
 
 alpha_arr=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-
+ans=[]
 for i in range (len(alpha_arr)):
     while alpha_arr[i] in string:
-        print('program')
+        ans.append("program")
         if alpha_arr[i] not in string:
-            print('not program')
-            break
+            ans.append("not program")
+print(ans)
+if "not program" in ans:
+    print("not program")
+else:
+    print("program")
     # if alpha_arr[i] not in string:
     #     print(True)
     # else:

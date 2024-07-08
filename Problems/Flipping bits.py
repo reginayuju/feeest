@@ -13,18 +13,48 @@ from sys import stdin
 #
 
 # def flippingBits(n):
+# n=894832
+# for read in stdin:
+#     n=int(read)
+#     print(bin(n)[2:])
 
-for read in stdin:
-    n=int(read)
-    print(bin(n)[2:]) 
+
+a_list = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+
+x = 13
+temp = format(x, "b")
+list_2 = []
+ans_list = []
+for i in range(len(temp)):
+    a_list[-1 - i] = temp[-1 - i]
+
+for i in range(len(a_list)):
+    if a_list[i] == '1':
+        b = 0
+        list_2.append(b)
+    if a_list[i] == '0':
+        b = 1
+        list_2.append(b)
+    if a_list[i] == 0:
+        b = 1
+        list_2.append(b)
+for e in range(len(list_2)):
+    if list_2[-1-e] == 1:
+        ans = 2**e
+        ans_list.append(ans)
+    if list_2[-1-e] == 0:
+        ans = 0
+        ans_list.append(ans)
+print(sum(ans_list))
 
 # if __name__ == '__main__':
 #     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-    q = int(input().strip())
+# q = int(input().strip())
 
-    for q_itr in range(q):
-        n = int(input().strip())
+# for q_itr in range(q):
+#     n = int(input().strip())
 
 #         result = flippingBits(n)
 

@@ -36,6 +36,13 @@ for i in range (0,(len(nums)-1)):
     ans_list.append(A)
 print(ans_list)
 print(max(ans_list))
+
+# f(x)=f(x-1)*f(x-2)
+
+# def f(nums):
+#     for i in range (len(nums)):
+#         return f(nums[i-1])*f(nums[i-2])
+#     print(f(nums))
     
     
     
