@@ -30,10 +30,10 @@ for i in range (len(alpha_arr)):
         if alpha_arr[i] not in string:
             ans.append("not program")
 print(ans)
-if "not program" in ans:
-    print("not program")
-else:
-    print("program")
+# if "not program" in ans:
+#     print("not program")
+# else:
+#     print("program")
     # if alpha_arr[i] not in string:
     #     print(True)
     # else:
