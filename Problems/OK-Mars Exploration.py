@@ -13,14 +13,25 @@ import sys
 
 # def marsExploration(s):
 count = 0
-s = "SOSSPSSQSSOR"
+s = "SOSSOT"
 s = list(s)
 # print(s)
 # print(int(len(s)/3))
-for i in range (1,int(len(s)/3)+1):
-    print(i, s[i])
-    print(i+1, s[i+1])
-    print(2*i+1, s[2*i+1])
+for i in range(0, len(s), 3):
+    # print(s[i:i + 3])
+    # print(s[i])
+    # print(s[i + 1])
+    # print(s[i + 2])
+    if s[i] != 'S':
+        count += 1
+    if s[i+2] != 'S':
+        count += 1
+    if s[i+1] != 'O':
+        count += 1
+print(count)
+    # print(i, s[i])
+    # print(i+1, s[i+1])
+    # print(2*i+1, s[2*i+1])
     # if s[(i-1)] != 'S':
     #     print(i-1,s[i-1])
     #     # count +=1
@@ -29,7 +40,6 @@ for i in range (1,int(len(s)/3)+1):
 #     if s[3(i+1)-1] != 'O':
 #         count +=1
 # print(count)
-
 
 # if __name__ == '__main__':
 #     fptr = open(os.environ['OUTPUT_PATH'], 'w')
